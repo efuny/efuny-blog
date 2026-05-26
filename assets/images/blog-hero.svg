@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1152" viewBox="0 0 2048 1152" role="img" aria-label="AI cyberpunk creator dashboard">
+  <defs>
+    <radialGradient id="pulse" cx="50%" cy="45%" r="58%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".36"/>
+      <stop offset=".42" stop-color="#7c3aed" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#090b13" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="2048" height="1152" fill="#090b13"/>
+  <path d="M0 0h2048v1152H0z" fill="url(#pulse)"/>
+  <g opacity=".22" stroke="#22d3ee" stroke-width="2">
+    <path d="M0 168h2048M0 288h2048M0 408h2048M0 528h2048M0 648h2048M0 768h2048M0 888h2048"/>
+    <path d="M168 0v1152M328 0v1152M488 0v1152M648 0v1152M808 0v1152M968 0v1152M1128 0v1152M1288 0v1152M1448 0v1152M1608 0v1152M1768 0v1152"/>
+  </g>
+  <g filter="url(#glow)">
+    <path d="M330 744C520 456 702 388 982 548s512 104 734-174" fill="none" stroke="#22d3ee" stroke-width="8" stroke-linecap="round"/>
+    <path d="M418 420c256 150 404 192 680 84s430-64 574 126" fill="none" stroke="#f472b6" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  </g>
+  <g fill="#22d3ee" filter="url(#glow)">
+    <circle cx="330" cy="744" r="16"/>
+    <circle cx="620" cy="482" r="12"/>
+    <circle cx="982" cy="548" r="18"/>
+    <circle cx="1348" cy="600" r="14"/>
+    <circle cx="1716" cy="374" r="16"/>
+  </g>
+  <g fill="#f472b6" filter="url(#glow)">
+    <circle cx="418" cy="420" r="13"/>
+    <circle cx="840" cy="558" r="12"/>
+    <circle cx="1242" cy="476" r="14"/>
+    <circle cx="1672" cy="630" r="13"/>
+  </g>
+  <rect x="526" y="268" width="996" height="604" rx="34" fill="url(#panel)" stroke="#22d3ee" stroke-opacity=".42" stroke-width="3"/>
+  <rect x="594" y="346" width="392" height="22" rx="11" fill="#22d3ee"/>
+  <rect x="594" y="424" width="632" height="16" rx="8" fill="#64748b"/>
+  <rect x="594" y="482" width="520" height="16" rx="8" fill="#334155"/>
+  <rect x="594" y="540" width="690" height="16" rx="8" fill="#64748b"/>
+  <rect x="594" y="634" width="232" height="54" rx="27" fill="#22d3ee" opacity=".18" stroke="#22d3ee"/>
+  <rect x="858" y="634" width="246" height="54" rx="27" fill="#f472b6" opacity=".16" stroke="#f472b6"/>
+  <rect x="1136" y="634" width="202" height="54" rx="27" fill="#2dd4bf" opacity=".16" stroke="#2dd4bf"/>
+  <path d="M618 774h812" stroke="#22d3ee" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M678 806h286M1028 806h342" stroke="#f472b6" stroke-opacity=".48" stroke-width="4" stroke-linecap="round"/>
+</svg>

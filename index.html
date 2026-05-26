@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jason's Notes | 个人博客</title>
+    <meta
+      name="description"
+      content="Jason's Notes 是一个关于软件工程、AI 工具、产品构建和长期思考的个人博客。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Jason's Notes">
+        <span class="brand-mark">J</span>
+        <span>Jason's Notes</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#posts" data-i18n="nav.posts">文章</a>
+        <a href="#projects" data-i18n="nav.projects">项目</a>
+        <a href="#about" data-i18n="nav.about">关于</a>
+        <a href="#contact" data-i18n="nav.contact">联系</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="language-switch" type="button" data-language-toggle>English</button>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">技术 / 创作者博客</p>
+          <h1 data-i18n="hero.title">你好，我是 Jason。这里记录技术、产品与长期思考。</h1>
+          <p class="hero-description" data-i18n="hero.description">
+            我关注软件工程、AI 工具、产品构建和个人知识系统。这个博客用来沉淀实践经验，也记录一些正在形成中的想法。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#posts" data-i18n="hero.primary">阅读文章</a>
+            <a class="button secondary" href="#about" data-i18n="hero.secondary">了解我</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="assets/images/blog-hero.svg" alt="" />
+        </figure>
+      </section>
+
+      <section class="section section-heading" id="posts">
+        <div>
+          <p class="eyebrow" data-i18n="posts.eyebrow">精选文章</p>
+          <h2 data-i18n="posts.title">近期最值得读的 3 篇</h2>
+        </div>
+        <p data-i18n="posts.description">
+          这些文章代表了我近期最关注的方向：知识系统、AI 协作和产品构建。
+        </p>
+      </section>
+
+      <section class="featured-grid" aria-label="Featured posts">
+        <article class="post-card post-card-large">
+          <img src="assets/images/featured-posts.svg" alt="" />
+          <div class="post-content">
+            <div class="post-meta">
+              <span>Notes</span>
+              <span>2026.05.25</span>
+              <span>6 min read</span>
+            </div>
+            <h3 data-i18n="post.one.title">如何建立一个长期可维护的个人知识系统</h3>
+            <p data-i18n="post.one.description">
+              从记录、整理、回顾到输出，分享一个适合长期使用的知识管理流程。
+            </p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-content">
+            <div class="post-meta">
+              <span>AI</span>
+              <span>2026.05.18</span>
+              <span>8 min read</span>
+            </div>
+            <h3 data-i18n="post.two.title">AI 工具如何改变个人开发流程</h3>
+            <p data-i18n="post.two.description">
+              记录从需求拆解、代码实现到验证交付的 AI 协作实践。
+            </p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-content">
+            <div class="post-meta">
+              <span>Product</span>
+              <span>2026.05.10</span>
+              <span>7 min read</span>
+            </div>
+            <h3 data-i18n="post.three.title">从一个小产品开始理解复杂系统</h3>
+            <p data-i18n="post.three.description">
+              用产品构建过程观察需求、约束、反馈和系统演化。
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="topics section" id="projects">
+        <div class="topics-copy">
+          <p class="eyebrow" data-i18n="topics.eyebrow">主题分类</p>
+          <h2 data-i18n="topics.title">围绕实践建立的内容地图</h2>
+          <p data-i18n="topics.description">
+            我把文章按长期关注的问题组织起来，方便你从一个主题进入，再慢慢延展。
+          </p>
+        </div>
+        <img class="topics-visual" src="assets/images/topic-grid.svg" alt="" />
+        <div class="topic-list">
+          <a class="topic-item" href="#">
+            <span>Engineering</span>
+            <p data-i18n="topic.engineering">关于代码、系统设计和工程实践。</p>
+            <small>12 posts</small>
+          </a>
+          <a class="topic-item" href="#">
+            <span>AI</span>
+            <p data-i18n="topic.ai">关于 AI 工具、工作流和人机协作。</p>
+            <small>9 posts</small>
+          </a>
+          <a class="topic-item" href="#">
+            <span>Product</span>
+            <p data-i18n="topic.product">关于产品构建、体验设计和决策。</p>
+            <small>7 posts</small>
+          </a>
+          <a class="topic-item" href="#">
+            <span>Notes</span>
+            <p data-i18n="topic.notes">关于阅读、学习和长期记录。</p>
+            <small>18 posts</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="updates section">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow" data-i18n="updates.eyebrow">近期动态</p>
+            <h2 data-i18n="updates.title">正在更新的笔记</h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <article>
+            <time>2026.05.25</time>
+            <div>
+              <h3 data-i18n="update.one.title">整理个人主页设计稿</h3>
+              <p data-i18n="update.one.description">确定博客首页的信息架构、视觉方向和双语文案。</p>
+            </div>
+          </article>
+          <article>
+            <time>2026.05.20</time>
+            <div>
+              <h3 data-i18n="update.two.title">发布一篇 AI 工作流笔记</h3>
+              <p data-i18n="update.two.description">记录如何用 AI 辅助完成小型产品迭代。</p>
+            </div>
+          </article>
+          <article>
+            <time>2026.05.12</time>
+            <div>
+              <h3 data-i18n="update.three.title">更新项目归档方式</h3>
+              <p data-i18n="update.three.description">把项目从简单列表调整为按主题分组。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <img src="assets/images/about-workspace.svg" alt="" />
+        <div class="about-copy">
+          <p class="eyebrow" data-i18n="about.eyebrow">关于我</p>
+          <h2 data-i18n="about.title">把实践问题整理成可复用的文章</h2>
+          <p data-i18n="about.description">
+            我是一名关注软件工程、AI 工具和产品构建的创作者。平时喜欢把实践中的问题拆开，整理成可复用的方法和文章。这个网站是我的公开笔记本，也是一处长期维护的个人档案。
+          </p>
+          <div class="status-list">
+            <span>Shanghai / Remote</span>
+            <span>Engineering</span>
+            <span>Open to collaboration</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div>
+          <p class="eyebrow" data-i18n="contact.eyebrow">联系与订阅</p>
+          <h2 data-i18n="contact.title">保持联系，或者继续阅读</h2>
+          <p data-i18n="contact.description">
+            如果你对文章、项目或合作有兴趣，欢迎通过邮件联系我。
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:hello@example.com">hello@example.com</a>
+          <a href="https://github.com/username">GitHub</a>
+          <a href="https://x.com/username">X / Twitter</a>
+          <a href="/feed.xml">RSS</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Jason. All rights reserved.</span>
+      <button class="language-switch footer-language" type="button" data-language-toggle>English</button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-label="Cyber knowledge graph">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="#090b13"/>
+  <rect x="108" y="96" width="1320" height="832" rx="44" fill="#0f172a" stroke="#22d3ee" stroke-opacity=".26" stroke-width="3"/>
+  <g opacity=".25" stroke="#22d3ee" stroke-width="2">
+    <path d="M188 216h1160M188 336h1160M188 456h1160M188 576h1160M188 696h1160M188 816h1160"/>
+    <path d="M268 156v712M428 156v712M588 156v712M748 156v712M908 156v712M1068 156v712M1228 156v712"/>
+  </g>
+  <g stroke-width="6" stroke-linecap="round" opacity=".88" filter="url(#glow)">
+    <path d="M364 304l398 204 414-190" stroke="#22d3ee"/>
+    <path d="M364 720l398-212 414 218" stroke="#f472b6"/>
+    <path d="M364 304v416M1176 318v408" stroke="#2dd4bf"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="364" cy="304" r="46" fill="#22d3ee"/>
+    <circle cx="762" cy="508" r="64" fill="#111827" stroke="#e5f1ff" stroke-width="8"/>
+    <circle cx="1176" cy="318" r="46" fill="#f472b6"/>
+    <circle cx="364" cy="720" r="46" fill="#f59e0b"/>
+    <circle cx="1176" cy="726" r="46" fill="#2dd4bf"/>
+  </g>
+  <g fill="#0f172a" stroke="#64748b" stroke-width="3">
+    <rect x="250" y="226" width="228" height="70" rx="20"/>
+    <rect x="1062" y="240" width="228" height="70" rx="20"/>
+    <rect x="250" y="748" width="228" height="70" rx="20"/>
+    <rect x="1062" y="748" width="228" height="70" rx="20"/>
+  </g>
+</svg>

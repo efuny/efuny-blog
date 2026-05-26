@@ -1,0 +1,7 @@
+# Local deployment folders
+.netlify
+.vercel
+output/
+
+# OS files
+.DS_Store
