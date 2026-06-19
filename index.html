@@ -54,10 +54,10 @@
       <section class="section section-heading" id="posts">
         <div>
           <p class="eyebrow" data-i18n="posts.eyebrow">精选文章</p>
-          <h2 data-i18n="posts.title">近期最值得读的 3 篇</h2>
+          <h2 data-i18n="posts.title">飞牛 OS 迁移实战 3 例</h2>
         </div>
         <p data-i18n="posts.description">
-          这些文章代表了我近期最关注的方向：知识系统、AI 协作和产品构建。
+          从 HP Gen8 的系统盘迁移，到风险数据盘备份和 Docker 落盘优化，记录一次完整的 NAS 维护过程。
         </p>
       </section>
 
@@ -66,13 +66,13 @@
           <img src="assets/images/featured-posts.jpg" alt="" />
           <div class="post-content">
             <div class="post-meta">
-              <span>Notes</span>
-              <span>2026.05.25</span>
-              <span>6 min read</span>
+              <span>fnOS</span>
+              <span>2026.06.19</span>
+              <span>System</span>
             </div>
-            <h3 data-i18n="post.one.title">如何建立一个长期可维护的个人知识系统</h3>
+            <h3 data-i18n="post.one.title">HP Gen8 从 SD 卡系统迁移到 Intel SSD</h3>
             <p data-i18n="post.one.description">
-              从记录、整理、回顾到输出，分享一个适合长期使用的知识管理流程。
+              先验证 SATA5 独立启动不可行，再改为 SD 卡负责 GRUB 引导、SSD 承载真正的系统根目录。
             </p>
           </div>
         </article>
@@ -80,13 +80,13 @@
         <article class="post-card">
           <div class="post-content">
             <div class="post-meta">
-              <span>AI</span>
-              <span>2026.05.18</span>
-              <span>8 min read</span>
+              <span>Storage</span>
+              <span>2026.06.19</span>
+              <span>Risk</span>
             </div>
-            <h3 data-i18n="post.two.title">AI 工具如何改变个人开发流程</h3>
+            <h3 data-i18n="post.two.title">数据盘 1 出现 SMART 风险后的抢救迁移</h3>
             <p data-i18n="post.two.description">
-              记录从需求拆解、代码实现到验证交付的 AI 协作实践。
+              识别 WD-WCAV5M641288 的待映射扇区风险，先把用户数据和应用元数据备份到健康盘。
             </p>
           </div>
         </article>
@@ -94,16 +94,78 @@
         <article class="post-card">
           <div class="post-content">
             <div class="post-meta">
-              <span>Product</span>
-              <span>2026.05.10</span>
-              <span>7 min read</span>
+              <span>Docker</span>
+              <span>2026.06.19</span>
+              <span>SSD</span>
             </div>
-            <h3 data-i18n="post.three.title">从一个小产品开始理解复杂系统</h3>
+            <h3 data-i18n="post.three.title">把 Docker 从机械盘迁到系统 SSD</h3>
             <p data-i18n="post.three.description">
-              用产品构建过程观察需求、约束、反馈和系统演化。
+              兼容飞牛只识别存储空间的限制，用 bind mount 让 Docker 数据实际落到 SSD。
             </p>
           </div>
         </article>
+      </section>
+
+      <section class="case-notes section" aria-label="fnOS migration case notes">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow" data-i18n="cases.eyebrow">维护案例</p>
+            <h2 data-i18n="cases.title">一次迁移里拆出来的 3 个可复用经验</h2>
+          </div>
+          <p data-i18n="cases.description">
+            这次维护的核心不是跑命令，而是把可回滚、可验证和不误伤数据盘放在第一位。
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-kicker">
+              <span>Case 01</span>
+              <strong data-i18n="case.one.tag">系统盘迁移</strong>
+            </div>
+            <h3 data-i18n="case.one.title">SD 卡引导，SSD 运行系统</h3>
+            <p data-i18n="case.one.summary">
+              HP Gen8 的 SATA5 光驱位无法稳定独立启动，因此保留 SD 卡作为 BIOS/GRUB 入口，把 Linux 根分区切到 Intel SSD。
+            </p>
+            <ul class="case-points">
+              <li data-i18n="case.one.point1">先初始化 SSD、复制系统，再给 SSD 安装 GRUB 做独立启动测试。</li>
+              <li data-i18n="case.one.point2">独立启动失败后，只修改 SD 卡 GRUB 的 kernel root UUID，保留 search UUID 指向 SD 卡 /boot。</li>
+              <li data-i18n="case.one.point3">最终验证 / 挂载到 Intel SSD，SD 卡旧系统分区卸载，仅保留引导职责。</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <div class="case-kicker">
+              <span>Case 02</span>
+              <strong data-i18n="case.two.tag">风险盘迁移</strong>
+            </div>
+            <h3 data-i18n="case.two.title">先抢数据，再讨论修盘</h3>
+            <p data-i18n="case.two.summary">
+              数据盘 1 对应 WD-WCAV5M641288，SMART 里出现 1 个重映射扇区和 1 个待映射扇区，但 Btrfs 还没有记录读写错误。
+            </p>
+            <ul class="case-points">
+              <li data-i18n="case.two.point1">确认 /vol1 是风险盘，/vol2 基本空闲且容量足够承接数据。</li>
+              <li data-i18n="case.two.point2">优先复制 /vol1/1000 用户数据，再备份 @appdata、@appmeta、@appcenter 和 @sysappmeta。</li>
+              <li data-i18n="case.two.point3">不贸然执行 btrfs check --repair，等关键数据安全后再安排 SMART 长测。</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <div class="case-kicker">
+              <span>Case 03</span>
+              <strong data-i18n="case.three.tag">Docker 落盘优化</strong>
+            </div>
+            <h3 data-i18n="case.three.title">让飞牛看到 /vol2，实际写入 SSD</h3>
+            <p data-i18n="case.three.summary">
+              飞牛应用中心只允许选择存储空间 1/2/3，无法直接选择系统 SSD，所以用 /vol2/docker 做表面路径，绑定到 SSD 的 /opt/docker。
+            </p>
+            <ul class="case-points">
+              <li data-i18n="case.three.point1">冷迁移 /vol1/docker 到 /opt/docker，保留旧目录作为可回滚备份。</li>
+              <li data-i18n="case.three.point2">让 daemon.json 继续使用 /vol2/docker，避免被飞牛界面重写成其他存储空间。</li>
+              <li data-i18n="case.three.point3">用 systemd mount unit 持久化 bind mount，重启后验证容器和挂载都恢复。</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
       <section class="topics section" id="projects">
@@ -148,24 +210,24 @@
         </div>
         <div class="timeline">
           <article>
-            <time>2026.05.25</time>
+            <time>2026.06.19</time>
             <div>
-              <h3 data-i18n="update.one.title">整理个人主页设计稿</h3>
-              <p data-i18n="update.one.description">确定博客首页的信息架构、视觉方向和双语文案。</p>
+              <h3 data-i18n="update.one.title">完成飞牛 OS 系统盘迁移</h3>
+              <p data-i18n="update.one.description">HP Gen8 保留 SD 卡引导，Intel SSD 承载实际系统根目录。</p>
             </div>
           </article>
           <article>
-            <time>2026.05.20</time>
+            <time>2026.06.19</time>
             <div>
-              <h3 data-i18n="update.two.title">发布一篇 AI 工作流笔记</h3>
-              <p data-i18n="update.two.description">记录如何用 AI 辅助完成小型产品迭代。</p>
+              <h3 data-i18n="update.two.title">备份数据盘 1 的关键内容</h3>
+              <p data-i18n="update.two.description">把 /vol1 用户数据和应用元数据复制到健康的 /vol2。</p>
             </div>
           </article>
           <article>
-            <time>2026.05.12</time>
+            <time>2026.06.19</time>
             <div>
-              <h3 data-i18n="update.three.title">更新项目归档方式</h3>
-              <p data-i18n="update.three.description">把项目从简单列表调整为按主题分组。</p>
+              <h3 data-i18n="update.three.title">Docker 数据迁移到 SSD</h3>
+              <p data-i18n="update.three.description">通过 /vol2/docker 的持久化绑定挂载兼容飞牛应用中心。</p>
             </div>
           </article>
         </div>
